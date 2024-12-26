@@ -79,6 +79,6 @@ public class Car extends Vehicle {
             return;
         }
 
-        new RentalHistory(primeCustomer);
+        new RentalTransaction(primeCustomer);
     }
 }
