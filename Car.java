@@ -1,6 +1,7 @@
 public class Car extends Vehicle implements Rentable{
     private boolean isLuxury;
     private double additional;
+    private Customer primeCustomer;
     private double baseRentRate = 330.7;
 
     public Car(String vehicleName, boolean isLuxury, boolean isAvailable) {
@@ -9,6 +10,7 @@ public class Car extends Vehicle implements Rentable{
         this.vehicleName = vehicleName;
         this.vehicleType = VehicleType.CAR;
         this.additional = isLuxury ? 150 : 10;
+        this.rent = calculateRentalCost(primeCustomer.daysToRent);
     }
 
 
@@ -45,15 +47,20 @@ public class Car extends Vehicle implements Rentable{
 
     @Override
     public void rent(Customer customer, int days) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'rent'");
+        if (!this.isAvailable){
+            throw new UnsupportedOperationException("This car is not available for rent");
+        }
+
+        primeCustomer = customer;
+
+        this.isAvailable = !this.isAvailable;
+        System.out.println("Here's your " + this.vehicleName + "Have a lovely day");
     }
 
 
     @Override
     public void returnVehicle() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'returnVehicle'");
+        new RentalHistory(primeCustomer);
     }
 
 }

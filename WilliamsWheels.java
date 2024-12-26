@@ -1,4 +1,8 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class WilliamsWheels {
+    List<Vehicle> selectedType;
     Vehicle[] vehicles = new Vehicle[]{
         new Truck("Rambo", true, false),
         new Car("Volkswagen", false, true),
@@ -11,11 +15,17 @@ public class WilliamsWheels {
     };
 
     public void displaySelectedVehicles(Class<?> vehicleType) {
+        selectedType = new ArrayList<>();
         System.out.println("\nSelected Vehicles (" + vehicleType.getSimpleName() + "):");
         for (Vehicle vehicle : vehicles) {
             if (vehicleType.isInstance(vehicle)) {
+                selectedType.add(vehicle);
                 System.out.println(vehicle.vehicleName);
             }
         }
+    }
+
+    public void selectVehicle(){
+
     }
 }

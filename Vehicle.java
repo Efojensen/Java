@@ -7,6 +7,8 @@ public abstract class Vehicle {
         CAR, TRUCK, MOTORCYCLE
     }
 
+    protected double rent;
+
     protected String vehicleName;
 
     protected VehicleType vehicleType;

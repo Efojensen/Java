@@ -1,5 +1,6 @@
 public class Customer {
     public String name;
+    public int daysToRent;
     public double amountPaid;
     public Vehicle chosenVehicle;
 
