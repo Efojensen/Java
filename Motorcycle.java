@@ -18,4 +18,16 @@ public class Motorcycle extends Vehicle{
         double ans = baseRentRate * days;
         return ans;
     }
+
+    @Override
+    public void rent(Customer customer, int days) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'rent'");
+    }
+
+    @Override
+    public void returnVehicle() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'returnVehicle'");
+    }
 }

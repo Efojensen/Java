@@ -1,4 +1,4 @@
-public abstract class Vehicle {
+public abstract class Vehicle implements Rentable{
     protected String vehicleId;
 
     protected boolean isAvailable;

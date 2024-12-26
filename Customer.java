@@ -3,6 +3,11 @@ public class Customer {
     public int daysToRent;
     public double amountPaid;
     public Vehicle chosenVehicle;
+    private double amountOnHand = 5000;
+
+    public double getAmountOnHand(){
+        return this.amountOnHand;
+    }
 
     public Customer(String name) {
         setName(name);

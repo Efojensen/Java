@@ -11,7 +11,6 @@ public class Hello {
             switch (chosen) {
                 case 1:
                     willsWheels.displaySelectedVehicles(Motorcycle.class);
-                    
                     break;
                 case 2:
                     willsWheels.displaySelectedVehicles(Car.class);
