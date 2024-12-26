@@ -11,6 +11,8 @@ public abstract class Vehicle implements Rentable{
 
     protected String vehicleName;
 
+    protected Customer customer;
+
     protected VehicleType vehicleType;
 
     abstract boolean isAvailableForRental();

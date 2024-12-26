@@ -9,10 +9,12 @@ public class Hello {
 
         try (Scanner secondth = new Scanner(System.in)) {
             int chosen = secondth.nextInt();
+            secondth.nextLine();
 
             System.out.println("Before proceeding please enter in these fields...\n");
             System.out.println("Name: ");
             String name = secondth.nextLine();
+            secondth.nextLine();
 
             Customer current = new Customer(
                 name

@@ -1,7 +1,7 @@
 public class Car extends Vehicle {
     private boolean isLuxury;
     private double additional;
-    static private Customer primeCustomer;
+    private static Customer primeCustomer;
     private double baseRentRate = 330.7;
 
     public Car(

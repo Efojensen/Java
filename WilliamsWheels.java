@@ -37,6 +37,7 @@ public class WilliamsWheels {
             return;
         }
 
-        System.out.println("Would you like to purchase " + selectedVehicle.vehicleName + " at GHc." + selectedVehicle.calculateRentalCost(customer.daysToRent) + "?");
+        System.out.println("Would you like to purchase " + selectedVehicle.vehicleName + " at $" + selectedVehicle.calculateRentalCost(customer.daysToRent) + "?");
+
     }
 }
