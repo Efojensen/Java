@@ -12,10 +12,10 @@ public class Hello {
             secondth.nextLine();
 
             System.out.println("Before proceeding please enter in these fields...\n");
-            System.out.println("Name: ");
+            System.out.print("Name: ");
             String name = secondth.nextLine();
             secondth.nextLine();
-
+            
             Customer current = new Customer(
                 name
             );

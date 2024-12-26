@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class WilliamsWheels {
@@ -37,7 +38,34 @@ public class WilliamsWheels {
             return;
         }
 
-        System.out.println("Would you like to purchase " + selectedVehicle.vehicleName + " at $" + selectedVehicle.calculateRentalCost(customer.daysToRent) + "?");
+        double cost = selectedVehicle.calculateRentalCost(customer.daysToRent);
+        System.out.println("Would you like to purchase " + selectedVehicle.vehicleName + " at $" + cost + "?");
+        System.out.print("Y/N: ");
+        String ans;
+        try (Scanner input = new Scanner(System.in)) {
+            ans = input.next().toLowerCase();
+        }
 
+        do {
+            if (ans.equals("y")){
+                double amount = customer.getAmountOnHand();
+                if (amount < cost) {
+                    System.out.println("Insufficient funds to complete transaction");
+                    return;
+                }
+
+                customer.setAmountOnHand(cost);
+                System.out.println("Successfully purchased " + selectedVehicle.vehicleName + " at " + cost +".");
+                System.out.println("Total funds left: " + customer.getAmountOnHand());
+            }else if (ans.equals("n")) {
+                System.out.println("Come again another time.");
+                return;
+            } else {
+                System.out.println("Please choose a valid option.");
+                try (Scanner input = new Scanner(System.in)){
+                    ans = input.next().toLowerCase();
+                }
+            }
+        } while (!ans.equals("y") && !ans.equals("n"));
     }
 }

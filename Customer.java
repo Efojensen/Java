@@ -10,7 +10,8 @@ public class Customer {
     }
 
     public double setAmountOnHand(double deductedAmount) {
-        return this.amountOnHand - deductedAmount;
+        this.amountOnHand -= deductedAmount;
+        return this.amountOnHand;
     }
 
     public Customer(String name) {
