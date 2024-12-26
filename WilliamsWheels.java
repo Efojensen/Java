@@ -3,11 +3,12 @@ import java.util.ArrayList;
 
 public class WilliamsWheels {
     List<Vehicle> selectedType;
+    Customer check;
     Vehicle[] vehicles = new Vehicle[]{
         new Truck("712132", "Rambo", true),
         new Truck("792232", "El-Grande", false),
         new Truck("920912", "The Roadrunner", false),
-        new Car(false,"672912", "Volkswagen", true),
+        new Car(false, "672912", "Volkswagen", true),
         new Car(false, "345212", "Ford Pickup", false),
         new Car(true, "092429", "Nissan Expada", true),
         new Car(true, "902842", "Mercedes Benz", true),
@@ -31,5 +32,11 @@ public class WilliamsWheels {
         chosenVehicle -= 1;
         Vehicle selectedVehicle = selectedType.get(chosenVehicle);
         selectedVehicle.returnVehicle();
+
+        if (!selectedVehicle.isAvailable){
+            return;
+        }
+
+        System.out.println("Would you like to purchase " + selectedVehicle.vehicleName + " at GHc." + selectedVehicle.calculateRentalCost(customer.daysToRent) + "?");
     }
 }

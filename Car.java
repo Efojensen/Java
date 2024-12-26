@@ -1,7 +1,7 @@
 public class Car extends Vehicle {
     private boolean isLuxury;
     private double additional;
-    private Customer primeCustomer;
+    static private Customer primeCustomer;
     private double baseRentRate = 330.7;
 
     public Car(
@@ -19,9 +19,17 @@ public class Car extends Vehicle {
         this.rent = calculateRentalCost(primeCustomer.daysToRent);
     }
 
+    public Car(){
+
+    }
+
     @Override
     boolean isAvailableForRental() {
         return isAvailable();
+    }
+
+    public void setCustomer(Customer currentCustomer){
+        primeCustomer = currentCustomer;
     }
 
     @Override
@@ -65,7 +73,12 @@ public class Car extends Vehicle {
     public void returnVehicle() {
         System.out.println("Vehicle Name: " + this.vehicleName + "\tVehicle Type: " + this.vehicleType);
         System.out.println("Is available: " + this.isAvailable);
+
+        if (!this.isAvailable){
+            System.err.println("This car is not available for rent");
+            return;
+        }
+
         new RentalHistory(primeCustomer);
     }
-
 }

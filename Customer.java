@@ -9,6 +9,10 @@ public class Customer {
         return this.amountOnHand;
     }
 
+    public double setAmountOnHand(double deductedAmount) {
+        return this.amountOnHand - deductedAmount;
+    }
+
     public Customer(String name) {
         setName(name);
     }
